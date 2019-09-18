@@ -15,7 +15,7 @@
 			var in2 = document.getElementById("in2");
 			var add = document.getElementById("asd");
 			add.onclick = function() {
-				if (isNaN(in1.value || in2.value) == true) {
+				if (isNaN(in1.value)||isNaN(in2.value)) {
 					alert("输入整数");
 				} else {
 					var a = parseInt(Number(in1.value) + Number(in2.value));
