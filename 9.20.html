@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+ <head>
+    <meta charset="UTF-8">
+    <title>计算</title>
+</head>
+<body>
+    <script>
+        function count(a, b, method){
+            alert(method === '+' ? Number(a) + Number(b) : method === '-' ? a - b : method === '*' ? a * b : method === '/' ? a / b : '')
+        }
+        count(prompt('输入数字'), prompt('输入数字'), prompt('输入运算符'))
+    </script>
+</body>
+</html>
