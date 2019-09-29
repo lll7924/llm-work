@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="in1" placeholder="输入用户名" />
+		<input type="password" name="" id="" placeholder="输入密码" />
+		<button id="btn">注册</button>
+		<script type="text/javascript">
+			var in1 = document.getElementById('in1');
+			var in2 = document.getElementById('in2');
+			var btn = document.getElementById('btn');
+			var aaa = ['1', '2', '3'];
+
+
+
+			in1.onblur = function() {
+				if (in1.value == '') {
+					alert('用户名不能为空');
+				} else if (aaa.indexOf(in1.value) === -1) {
+					alert('用户名可使用');
+				} else {
+					alert('用户名重复');
+				}
+			}
+</html>
