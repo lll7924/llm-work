@@ -1,87 +1,71 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<style type="text/css">
-			.div1 {
-				width: 1000px;
-			}
-			.div3{
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-				box-shadow: 3px 2px 3px 2px #333333;
-				background-color: red;
-				float: left;
-				margin-left: 20px;
-			}
-			.div4{
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-				box-shadow: 3px 2px 3px 2px #333333;
-				background-color: yellow;
-				float: left;
-				margin-left: 20px;
-			}
-			.div5{
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-				box-shadow: 3px 2px 3px 2px #333333;
-				background-color: yellowgreen;
-				float: left;
-				margin-left: 20px;
-			}
-			.div6{
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-				box-shadow: 3px 2px 3px 2px #333333;
-				background-color: blue;
-				float: left;
-				margin-left: 20px;
-			}
-			.div7{
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-				box-shadow: 3px 2px 3px 2px #333333;
-				background-color: bisque;
-				float: left;
-				margin-left: 20px;
-			}
-			.div8{
-				width: 70px;
-				height: 70px;
-				border-radius: 50%;
-				box-shadow: 3px 2px 3px 2px #333333;
-				background-color: blueviolet;
-				float: left;
-				margin-left:20px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="div1">
-			<div class="div3"></div>
-			<div class="div4"></div>
-			<div class="div5"></div>
-			<div class="div6"></div>
-			<div class="div7"></div>
-			<div class="div8"></div>
-		</div>
-		<script type="text/javascript">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		table{
+			width: 800px;
+			height: 200px;
+			border: 2px solid black;
+		}
+		th{
+			width: 200px;
+		}
+		tr th{
+			border: 2px solid black;
+		}
+    </style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>商品</th>
+			<th>单价</th>
+			<th>数量</th>
+			<th>合计</th>
+		</tr>
+		<tr>
+			<th><input type="checkbox" id="mate20">华为mate20</th>
+			<th>1000</th>
+			<th>
+				<i class="i1">+</i>
+				<span class="span1">1</span>
+				<i class="i2">-</i>
+			</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th><input type="checkbox" id="mate20">小米8</th>
+			<th>1000</th>
+			<th>
+				<i class="i3">+</i>
+				<span class="span2">1</span>
+				<i class="i4">-</i>
+			</th>
+			<th></th>
+		</tr>
+	</table>
 
-
-			$(".div1>div").click(function() {
-
-				var background = $(this).css('background');
-				$('body').css('background', background);
-				$('body').css('background', background);
-			})
-		</script>
-	</body>
+	<script type="text/javascript">
+		$('.i1').click(function() {
+			$(this).next().html(parseInt($(this).next().html()) + 1);
+		});
+		$('.i2').click(function() {
+			var num = parseInt($(this).prev().html()) - 1;
+			$(this).prev().html(num);
+		});
+		$('.i3').click(function() {
+			$(this).next().html(parseInt($(this).next().html()) + 1);
+		});
+		$('.i4').click(function() {
+			var num = parseInt($(this).prev().html()) - 1;
+			$(this).prev().html(num);
+		});
+	</script>
+</body>
 </html>
